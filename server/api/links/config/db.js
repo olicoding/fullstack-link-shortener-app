@@ -1,12 +1,12 @@
 const mongoose = require("mongoose");
 require("dotenv").config();
 
-const REACT_APP_DB_URI = process.env.REACT_APP_DB_URI;
+const URI = process.env.REACT_APP_DB_URI;
 
 module.exports = async () => {
   try {
     mongoose.set("strictQuery", false);
-    await mongoose.connect(REACT_APP_DB_URI, {
+    await mongoose.connect(URI, {
       useNewUrlParser: true,
     });
     console.log("MongoDB connected");

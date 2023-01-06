@@ -4,7 +4,7 @@
   "description": "## Link Shortener",
   "main": "index.js",
   "scripts": {
-    "server": "node index.js",
+    "server": "nodemon index.js",
     "start": "node index.js"
   },
   "keywords": [],
