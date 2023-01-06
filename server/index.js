@@ -35,7 +35,7 @@ app.use(express.static(path.join(__dirname + "/public")));
 
 app.use("/", (req, res, next) => {
   console.log("Server connection requested");
-  res.send("Welcome to the Link Shortener App!");
+  next();
 });
 app.use("/api", require("./api/links/routes/linkRoutes"));
 

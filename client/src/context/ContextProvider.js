@@ -12,7 +12,7 @@ function ContextProvider({ children }) {
         const response = await axios.get("/api/list");
         const documents = response.data;
 
-        setDocs((prev) => [...prev, ...documents.links]);
+        setDocs((prev) => [...prev, ...documents?.links]);
       } catch (err) {
         console.log("Error on links fetch: ", err.message);
       }

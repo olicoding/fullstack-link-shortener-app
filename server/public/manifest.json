@@ -1,8 +1,8 @@
 {
   "short_name": "React App",
-  "name": "Fullstack Link Shortener",
+  "name": "Fullstack Link Shortener App",
   "icons": [],
-  "start_url": "/",
+  "start_url": ".",
   "display": "standalone",
   "theme_color": "#000000",
   "background_color": "#ffffff"
