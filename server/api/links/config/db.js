@@ -1,6 +1,8 @@
 const mongoose = require("mongoose");
 require("dotenv").config();
 
+console.log("config db connection requested");
+
 const URI = process.env.REACT_APP_DB_URI;
 
 module.exports = async () => {

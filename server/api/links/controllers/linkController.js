@@ -2,6 +2,8 @@ const Link = require("../models/Link");
 const urlRegex = require("url-regex");
 const axios = require("axios");
 
+console.log("linkController connection requested");
+
 module.exports.list = async (req, res) => {
   try {
     const links = await Link.find();

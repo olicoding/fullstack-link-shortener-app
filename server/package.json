@@ -1,11 +1,12 @@
 {
   "name": "link-shortener",
   "version": "1.0.0",
-  "description": "## Link Shortener",
+  "description": "Link Shortener App",
   "main": "index.js",
   "scripts": {
     "server": "nodemon index.js",
-    "start": "node index.js"
+    "start": "node lib/index.js",
+    "build": "babel src -d lib"
   },
   "keywords": [],
   "author": "",

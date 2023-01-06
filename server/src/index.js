@@ -1,4 +1,4 @@
-require("./api/links/config/db")();
+require("../api/links/config/db")();
 require("dotenv").config();
 const cors = require("cors");
 const express = require("express");
@@ -31,13 +31,15 @@ app.use(rateLimiter);
 app.use(cors());
 app.use(express.json());
 
+console.log("path.join -> ", path.join(__dirname + "/public"));
 app.use(express.static(path.join(__dirname + "/public")));
 
 app.use("/", (req, res, next) => {
   console.log("Server connection requested");
   next();
 });
-app.use("/api", require("./api/links/routes/linkRoutes"));
+
+app.use("/api", require("../api/links/routes/linkRoutes"));
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
