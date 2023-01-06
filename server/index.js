@@ -33,7 +33,7 @@ app.use(express.json());
 
 app.use(express.static(path.join(__dirname + "/public")));
 
-app.use("/api", require("./routes/linkRoutes"));
+app.use("/api", require("./api/links/routes/linkRoutes"));
 
 const port = process.env.PORT || 5000;
 app.listen(port, () => {
