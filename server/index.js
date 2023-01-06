@@ -33,6 +33,10 @@ app.use(express.json());
 
 app.use(express.static(path.join(__dirname + "/public")));
 
+app.use("/", (req, res, next) => {
+  console.log("Server connection requested");
+  res.send("Welcome to the Link Shortener App!");
+});
 app.use("/api", require("./api/links/routes/linkRoutes"));
 
 const port = process.env.PORT || 5000;
