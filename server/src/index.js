@@ -1,11 +1,27 @@
-require("../api/links/config/db")();
 require("dotenv").config();
 const cors = require("cors");
 const express = require("express");
-const app = express();
+const mongoose = require("mongoose");
 const path = require("path");
 const helmet = require("helmet");
 const rateLimit = require("express-rate-limit");
+
+const app = express();
+const PORT = process.env.PORT || 3000;
+
+const connectDB = async () => {
+  try {
+    mongoose.set("strictQuery", false);
+    const conn = await mongoose.connect(process.env.DB_URI, {
+      useNewUrlParser: true,
+      useUnifiedTopology: true,
+    });
+    console.log(`MongoDB Connected - srv: ${conn.connection.host}`);
+  } catch (error) {
+    console.log(error);
+    process.exit(1);
+  }
+};
 
 // Use helmet to set security headers
 app.use(
@@ -31,9 +47,6 @@ app.use(rateLimiter);
 app.use(cors());
 app.use(express.json());
 
-console.log("path.join -> ", path.join(__dirname + "/public"));
-app.use(express.static(path.join(__dirname + "/public")));
-
 app.use("/", (req, res, next) => {
   console.log("Server connection requested");
   next();
@@ -41,7 +54,17 @@ app.use("/", (req, res, next) => {
 
 app.use("/api", require("../api/links/routes/linkRoutes"));
 
-const port = process.env.PORT || 5000;
-app.listen(port, () => {
-  console.log(`Server up and running on port ${port}`);
+app.use(express.static("app"));
+
+if (process.env.NODE_ENV === "production") {
+  app.get("*", (_, res) => {
+    res.sendFile(path.join(__dirname, "app", "index.html"));
+  });
+}
+
+// Connect to the database before listening
+connectDB().then(() => {
+  app.listen(PORT, () => {
+    console.log(`Server up and running on port ${PORT}`);
+  });
 });

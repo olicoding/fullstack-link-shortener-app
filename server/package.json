@@ -4,7 +4,7 @@
   "description": "Link Shortener App",
   "main": "index.js",
   "scripts": {
-    "server": "nodemon index.js",
+    "server": "nodemon src/index.js",
     "start": "node lib/index.js",
     "build": "babel src -d lib"
   },
