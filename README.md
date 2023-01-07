@@ -36,10 +36,12 @@ A simple webapp that allows users to create short links and track clicks. Built 
   > npm install
 - Navigate to the client directory, install dependencies:
   > npm install
+- Navigate to the server directory, install dependencies:
+  > npm install
 - Back to root, create a .env file and define the following variables:
   - DATABASE_URI: the MongoDB connection string
   - PORT: the server port number
-- Start the client and development server together, by running:
+- Start the client and server together from the root, by running:
   > npm run dev
 
 ## Usage
