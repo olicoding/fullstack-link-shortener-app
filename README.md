@@ -1,6 +1,6 @@
 # Link Shortener App
 
-live version:
+live version: https://fullstack-link-shortener.vercel.app/
 
 ---
 
