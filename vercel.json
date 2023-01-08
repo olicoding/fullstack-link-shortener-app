@@ -1,0 +1,9 @@
+{
+  "version": 2,
+  "routes": [
+    {
+      "src": "/api/(.*)",
+      "dest": "https://enigmatic-beyond-98961.herokuapp.com/api/$1"
+    }
+  ]
+}
