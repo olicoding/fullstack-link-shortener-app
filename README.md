@@ -1,12 +1,16 @@
 # Link Shortener App
 
-live version: https://fullstack-link-shortener.vercel.app/
+Back-end deployed from my student GitHub account: https://github.com/OliveiraDCI/link-shortener-back-end
+
+Front-end deployed from this repository.
+
+Live full-stack version: https://fullstack-link-shortener.vercel.app/
 
 ---
 
 ## Description
 
-A simple full-stack webapp that allows users to create short links and track clicks. Built with MERN stack and Tailwind. I am also testing implementing it with Next.js 13, exploring Server Side Rendering, hydration and other modern development concepts.
+A simple full-stack webapp that allows users to create short links and track clicks. 
 
 ---
 
@@ -27,7 +31,7 @@ A simple full-stack webapp that allows users to create short links and track cli
 - Create short links by entering a target URL
 - View click statistics for each short link
 
-## Future Plans
+## Further
 
 - Implement user authentication.
 - Implement a more advanced analytics dashboard.
